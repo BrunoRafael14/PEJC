@@ -9,8 +9,6 @@ namespace PEJC.Games.LeagueOfLegends.Classes
     {
         string? Name {get;set;}
         double Maestry {get;set;}
-        int Kills {get;set;}
-        int Deaths {get;set;}
-        int Assists {get;set;}
+        
     }
 }
