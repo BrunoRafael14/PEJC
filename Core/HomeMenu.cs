@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PEJC.Games.LeagueOfLegends.LolMenu;
 
 namespace PEJC.Core
 {
@@ -14,12 +15,13 @@ namespace PEJC.Core
 
         public static void StartMenu()
         {
-            bool validationStatusLoop = true;
-            while (validationStatusLoop)
+            bool loopStatusValidation = true;
+            int response = 0;
+            while (loopStatusValidation)
             {
                 DisplayOptions();
-                int response = Convert.ToInt32(Console.ReadLine());
-                validationStatusLoop = Validations.MenuChoiceFilter(validationStatusLoop, response, GameOptions);
+                response = Convert.ToInt32(Console.ReadLine());
+                loopStatusValidation = Validations.MenuChoiceFilter(loopStatusValidation, response, GameOptions);
             }
         }
 
