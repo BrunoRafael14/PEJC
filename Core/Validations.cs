@@ -7,11 +7,12 @@ namespace PEJC.Core
 {
     public class Validations
     {
-        public static bool MenuChoiceFilter(bool validationStatusLoop, int response, List<string> options)
+        public const int IndexCorrection = 1;
+        public static bool MenuChoiceFilter(bool validationStatusLoop, int response, Dictionary<string, Action> options)
         {
             
             //Posteriormente ver a melhor forma de tirar esse número mágico da condição
-            if (response > (options.Count + 1) || response <= 0)
+            if (response > (options.Count + IndexCorrection) || response < IndexCorrection)
             {
                 Console.WriteLine("Opção Inválida");
                 return true;
