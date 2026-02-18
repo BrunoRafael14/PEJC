@@ -7,8 +7,8 @@ namespace PEJC.Games.LeagueOfLegends.Classes
 {
     public class Season
     {
-        string? SeasonReference {get;set;}
-        bool Situation {get;set;}
-        Match? Match {get;set;}
+        public string? SeasonReference {get;set;}
+        public bool Situation {get;set;}
+        public Match? Match {get;set;}
     }
 }

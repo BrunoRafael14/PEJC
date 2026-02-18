@@ -7,12 +7,12 @@ namespace PEJC.Games.LeagueOfLegends.Classes
 {
     public class Match
     {
-        int Kills {get;set;}
-        int Deaths {get;set;}
-        int Assists {get;set;}
-        int PdlGained {get;set;}
-        int MaestryGained {get;set;}
-        string? LanePlayed {get;set;}
-        Champion? champion {get;set;}
+        public int Kills {get;set;}
+        public int Deaths {get;set;}
+        public int Assists {get;set;}
+        public int PdlGained {get;set;}
+        public int MaestryGained {get;set;}
+        public string? LanePlayed {get;set;}
+        public Champion? Champion {get;set;}
     }
 }

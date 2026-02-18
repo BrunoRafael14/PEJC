@@ -7,8 +7,8 @@ namespace PEJC.Games.LeagueOfLegends.Classes
 {
     public class Champion
     {
-        string? Name {get;set;}
-        double Maestry {get;set;}
+        public string? Name {get;set;}
+        public double Maestry {get;set;}
         
     }
 }
