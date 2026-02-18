@@ -1,3 +1,4 @@
 ﻿using PEJC.Core;
+using PEJC.HomeMenu;
 
-HomeMenu.StartMenu();
+HomeMenu.StartHomeMenu();
