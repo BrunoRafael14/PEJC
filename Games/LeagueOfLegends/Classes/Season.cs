@@ -9,6 +9,6 @@ namespace PEJC.Games.LeagueOfLegends.Classes
     {
         public string? SeasonReference {get;set;}
         public bool Situation {get;set;}
-        public Match? Match {get;set;}
+        public List<Match>? Match {get;set;}
     }
 }

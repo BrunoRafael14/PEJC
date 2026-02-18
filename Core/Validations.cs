@@ -8,6 +8,17 @@ namespace PEJC.Core
     public class Validations
     {
         public const int IndexCorrection = 1;
+
+    public static int ReadIntInput()
+    {
+        int value;
+        while (!int.TryParse(Console.ReadLine(), out value))
+        {
+            Console.WriteLine("Opção Inválida, digite um número.");
+        }
+        return value;
+    }
+
         public static bool MenuChoiceFilter(bool validationStatusLoop, int response, Dictionary<string, Action> options)
         {
             

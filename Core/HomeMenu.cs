@@ -22,7 +22,7 @@ namespace PEJC.Core
             while (loopStatusValidation)
             {
                 DisplayOptions();
-                response = Convert.ToInt32(Console.ReadLine());
+                response = Validations.ReadIntInput();
                 loopStatusValidation = Validations.MenuChoiceFilter(loopStatusValidation, response, GameOptions);
             }
             ProceedWithChoice(response);
