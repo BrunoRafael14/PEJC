@@ -22,7 +22,7 @@ namespace PEJC.Core
 
         public static void DisplayOptions(Dictionary<string, Action> Options)
         {
-            Console.WriteLine("Escolha o jogo para estatístcas:");
+            Console.WriteLine("Escolha a opção para Prosseguir:");
             for (int counter = 0; counter < Options.Count; counter++)
             {
                 Console.WriteLine($"{counter + Validations.IndexCorrection}- {Options.ElementAt(counter).Key}");
