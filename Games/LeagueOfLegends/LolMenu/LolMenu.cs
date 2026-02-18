@@ -7,7 +7,7 @@ namespace PEJC.Games.LeagueOfLegends.LolMenu
 {
     public class LolMenu
     {
-        public static void StartedLolMenu()
+        public static void StartLolMenu()
         {
             Console.WriteLine("Testando Lol");
         }

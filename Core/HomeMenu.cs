@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PEJC.Games.LeagueOfLegends.LolMenu;
-using System.Linq;
 
 namespace PEJC.Core
 {
     public class HomeMenu
     {
-        public static Dictionary<string, Action> GameOptions = new Dictionary<string, Action>
+        private static readonly Dictionary<string, Action> GameOptions = new Dictionary<string, Action>
         {
-            {"League of Legends", LolMenu.StartedLolMenu}
+            {"League of Legends", LolMenu.StartLolMenu}
         };
-        public const int IndexCorrection = 1;
 
         public static void StartMenu()
         {
@@ -33,17 +31,17 @@ namespace PEJC.Core
             Console.WriteLine("Escolha o jogo para estatístcas:");
             for (int counter = 0; counter < GameOptions.Count; counter++)
             {
-                Console.WriteLine($"{counter + IndexCorrection}- {GameOptions.ElementAt(counter).Key}");
+                Console.WriteLine($"{counter + Validations.IndexCorrection}- {GameOptions.ElementAt(counter).Key}");
             }
-            Console.WriteLine($"{GameOptions.Count + IndexCorrection}- Sair");
+            Console.WriteLine($"{GameOptions.Count + Validations.IndexCorrection}- Sair");
         }
 
         public static void ProceedWithChoice(int response)
         {
             
-            if (response - IndexCorrection < GameOptions.Count){
-                var GameChoice = GameOptions.ElementAt(response - IndexCorrection).Value;
-                GameChoice();
+            if (response - Validations.IndexCorrection < GameOptions.Count){
+                var gameChoice = GameOptions.ElementAt(response - Validations.IndexCorrection).Value;
+                gameChoice();
             }
             else
             {

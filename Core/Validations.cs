@@ -9,15 +9,15 @@ namespace PEJC.Core
     {
         public const int IndexCorrection = 1;
 
-    public static int ReadIntInput()
-    {
-        int value;
-        while (!int.TryParse(Console.ReadLine(), out value))
+        public static int ReadIntInput()
         {
-            Console.WriteLine("Opção Inválida, digite um número.");
+            int value;
+            while (!int.TryParse(Console.ReadLine(), out value))
+            {
+                Console.WriteLine("Opção Inválida, digite um número.");
+            }
+            return value;
         }
-        return value;
-    }
 
         public static bool MenuChoiceFilter(bool validationStatusLoop, int response, Dictionary<string, Action> options)
         {
