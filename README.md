@@ -13,7 +13,7 @@ O PEJC permite que jogadores registrem seus dados de partidas e acompanhem sua e
 ```
 PEJC/
 ├── Core/
-│   ├── HomeMenu.cs       # Menu principal e seleção de jogo
+│   ├── IMenu.cs    # Métodos reutilizáveis de navegação de menu
 │   └── Validations.cs    # Validações de entrada do usuário
 ├── Games/
 │   └── LeagueOfLegends/
@@ -21,8 +21,12 @@ PEJC/
 │       │   ├── Champion.cs   # Modelo de campeão (nome, maestria)
 │       │   ├── Match.cs      # Modelo de partida (KDA, PDL, lane, campeão)
 │       │   └── Season.cs     # Modelo de temporada
+│       ├── Functions/
+│       │   └── RecordsAndChanges.cs  # Registro e alterações de dados do LoL
 │       └── LolMenu/
 │           └── LolMenu.cs    # Menu do League of Legends
+├── HomeMenu/
+│   └── HomeMenu.cs       # Menu principal e seleção de jogo
 ├── Program.cs
 └── PEJC.csproj
 ```
