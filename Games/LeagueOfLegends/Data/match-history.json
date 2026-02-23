@@ -1,3 +1,11 @@
-{
-    
-}
+[
+  {
+    "Kills": 12,
+    "Deaths": 3,
+    "Assists": 21,
+    "PdlGained": 21,
+    "MaestryGained": 1030,
+    "LanePlayed": "Midlane",
+    "ChampionPlayed": "Sett"
+  }
+]
