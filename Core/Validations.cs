@@ -36,7 +36,7 @@ namespace PEJC.Core
 
         public static bool ChampionNameChecker(string championPlayedMatch)
         {
-            string jsonPath = "Games/LeagueOfLegends/Data/chapions.json";
+            string jsonPath = "Games/LeagueOfLegends/Data/champions.json";
             string? jsonContent = File.ReadAllText(jsonPath);
             Dictionary<string, object?> champions = JsonSerializer.Deserialize<Dictionary<string, object?>>(jsonContent)?? throw new Exception("Falha ao deserializar o JSON.");
 
