@@ -13,6 +13,6 @@ namespace PEJC.Games.LeagueOfLegends.Classes
         public int PdlGained {get;set;}
         public int MaestryGained {get;set;}
         public string? LanePlayed {get;set;}
-        public Champion? Champion {get;set;}
+        public string? ChampionPlayed {get;set;}
     }
 }

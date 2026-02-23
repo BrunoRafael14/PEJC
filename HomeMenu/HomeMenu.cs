@@ -7,7 +7,7 @@ using PEJC.Core;
 
 namespace PEJC.HomeMenu
 {
-    public class HomeMenu : IMenu
+    public class HomeMenu
     {
         private static readonly Dictionary<string, Action> GameOptions = new Dictionary<string, Action>
         {

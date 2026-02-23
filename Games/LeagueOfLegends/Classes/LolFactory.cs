@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PEJC.Core;
 
 namespace PEJC.Games.LeagueOfLegends.Classes
 {
     public class LolFactory
     {
-        // Classe para instanciar as classes
+        private static readonly List<string> LanesOptions = new List<string>
+        {"Toplane", "Midlane", "Jungle", "Atirador", "Suporte"};
         public static Champion CreateChampion()
         {
             Console.WriteLine("Digite o nome do Campeão: ");
@@ -25,29 +27,14 @@ namespace PEJC.Games.LeagueOfLegends.Classes
 
         public static Match CreateMatch()
         {
-            Console.WriteLine("Informe quantidade de Kills: ");
-            int killsMatch = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe quantidade de Mortes: ");
-            int deathsMatch = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe quantidade de Assistências: ");
-            int assistsMatch = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe quantidade de PDL Ganho: ");
-            int pdlGainedMatch = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe quantidade de Maestria Ganha: ");
-            int maestryGainedMatch = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Informe a Lane Jogada (Toplane, Midlane, Jungle, Atirador, Suporte): ");
-            string? LanePlayedMath = Console.ReadLine();
-            Console.WriteLine("Informe Nome do Campeão utilizado: ");
-            string? ChampionMath = Console.ReadLine();
-
             Match match = new Match();
-            match.Kills = killsMatch;
-            match.Deaths = deathsMatch;
-            match.Assists = assistsMatch;
-            match.PdlGained = pdlGainedMatch;
-            match.MaestryGained = maestryGainedMatch;
-            match.LanePlayed = LanePlayedMath;
-            // Falta colocar o champion, ainda vou ver como consigo adicionar adicionar o campeão sem instanciar a outra classe Champion
+            match.Kills = ILolCreateMatch.GetKills();
+            match.Deaths = ILolCreateMatch.GetDeaths();
+            match.Assists = ILolCreateMatch.GetAssists();
+            match.PdlGained = ILolCreateMatch.GetPdlGained();
+            match.MaestryGained = ILolCreateMatch.GetMaestryGained();
+            match.LanePlayed = ILolCreateMatch.GetLanePlayed(LanesOptions);
+            match.ChampionPlayed = ILolCreateMatch.GetChampionPlayed();
 
             return match;
         }
