@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PEJC.Core;
+using PEJC.Games.LeagueOfLegends.Functions;
 
 namespace PEJC.Games.LeagueOfLegends.Classes
 {

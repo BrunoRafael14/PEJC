@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PEJC.Games.LeagueOfLegends.Data;
+using PEJC.Games.LeagueOfLegends.Classes;
 
 namespace PEJC.Games.LeagueOfLegends.Functions
 {
@@ -10,7 +11,8 @@ namespace PEJC.Games.LeagueOfLegends.Functions
     {
         public static void MatchRegistre()
         {
-            JsonService.SaveMatchData();
+            var matchCreated = LolFactory.CreateMatch();
+            JsonService.SaveMatchData(matchCreated);
         }
 
         public static void MaestryRegistre()

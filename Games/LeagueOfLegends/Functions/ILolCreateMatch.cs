@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PEJC.Core;
 
-namespace PEJC.Core
+namespace PEJC.Games.LeagueOfLegends.Functions
 {
     public class ILolCreateMatch
     {
@@ -11,35 +12,35 @@ namespace PEJC.Core
         public static int GetKills()
         {
             Console.WriteLine("Informe quantidade de Kills: ");
-            int killsMatch = Convert.ToInt32(Console.ReadLine());
+            int killsMatch = Validations.ReadIntInput();
             return killsMatch;
         }
         
         public static int GetDeaths()
         {
             Console.WriteLine("Informe quantidade de Mortes: ");
-            int deathsMatch = Convert.ToInt32(Console.ReadLine());
+            int deathsMatch = Validations.ReadIntInput();
             return deathsMatch;
         }
 
         public static int GetAssists()
         {
             Console.WriteLine("Informe quantidade de Assistências: ");
-            int assistsMatch = Convert.ToInt32(Console.ReadLine());
+            int assistsMatch = Validations.ReadIntInput();
             return assistsMatch;
         }
 
         public static int GetPdlGained()
         {
             Console.WriteLine("Informe quantidade de PDL Ganho: ");
-            int pdlGainedMatch = Convert.ToInt32(Console.ReadLine());
+            int pdlGainedMatch = Validations.ReadIntInput();
             return pdlGainedMatch;
         }
 
         public static int GetMaestryGained()
         {
             Console.WriteLine("Informe quantidade de Maestria Ganha: ");
-            int maestryGainedMatch = Convert.ToInt32(Console.ReadLine());
+            int maestryGainedMatch = Validations.ReadIntInput();
             return maestryGainedMatch;
         }
 

@@ -9,9 +9,9 @@ namespace PEJC.Games.LeagueOfLegends.Data
 {
     public class JsonService
     {
-        public static void SaveMatchData()
+        public static void SaveMatchData(Match matchCreated)
         {
-            var matchCreated = LolFactory.CreateMatch();
+            
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Games\LeagueOfLegends\Data\match-history.json");
             List<Match> matches = new List<Match>();
 
@@ -24,10 +24,8 @@ namespace PEJC.Games.LeagueOfLegends.Data
                 }
             }
 
-            // Adiciona a nova partida
             matches.Add(matchCreated);
 
-            // Salva tudo de volta
             string json = JsonSerializer.Serialize(matches, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
         }

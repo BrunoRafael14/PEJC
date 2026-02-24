@@ -7,5 +7,23 @@
     "MaestryGained": 1030,
     "LanePlayed": "Midlane",
     "ChampionPlayed": "Sett"
+  },
+  {
+    "Kills": 90,
+    "Deaths": 2,
+    "Assists": 87,
+    "PdlGained": 13,
+    "MaestryGained": 1203,
+    "LanePlayed": "Jungle",
+    "ChampionPlayed": "Naafiri"
+  },
+  {
+    "Kills": 12,
+    "Deaths": 12,
+    "Assists": 12,
+    "PdlGained": 12,
+    "MaestryGained": 12,
+    "LanePlayed": "Toplane",
+    "ChampionPlayed": "Anivia"
   }
 ]
