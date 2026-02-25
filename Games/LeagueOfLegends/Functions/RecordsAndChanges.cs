@@ -17,12 +17,12 @@ namespace PEJC.Games.LeagueOfLegends.Functions
 
         public static void MaestryRegistre()
         {
-            Console.WriteLine("Maestria Registrada");
+            throw new NotImplementedException();
         }
 
         public static void MaestryChange()
         {
-            Console.WriteLine("Maestria Alterada");
+            throw new NotImplementedException();
         }
     }
 }
