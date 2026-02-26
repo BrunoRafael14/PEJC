@@ -12,61 +12,61 @@ namespace PEJC.Games.LeagueOfLegends.Functions
         public static int GetKills()
         {
             Console.WriteLine("Informe quantidade de Kills: ");
-            int killsMatch = Validations.ReadIntInput();
-            return killsMatch;
+            int kills = Validations.ReadIntInput();
+            return kills;
         }
         
         public static int GetDeaths()
         {
             Console.WriteLine("Informe quantidade de Mortes: ");
-            int deathsMatch = Validations.ReadIntInput();
-            return deathsMatch;
+            int deaths = Validations.ReadIntInput();
+            return deaths;
         }
 
         public static int GetAssists()
         {
             Console.WriteLine("Informe quantidade de Assistências: ");
-            int assistsMatch = Validations.ReadIntInput();
-            return assistsMatch;
+            int assists = Validations.ReadIntInput();
+            return assists;
         }
 
-        public static int GetPdlGained()
+        public static int GetPdl()
         {
-            Console.WriteLine("Informe quantidade de PDL Ganho: ");
-            int pdlGainedMatch = Validations.ReadIntInput();
-            return pdlGainedMatch;
+            Console.WriteLine("Informe quantidade de PDL: ");
+            int pdl = Validations.ReadIntInput();
+            return pdl;
         }
 
-        public static int GetMaestryGained()
+        public static int GetMastery()
         {
-            Console.WriteLine("Informe quantidade de Maestria Ganha: ");
-            int maestryGainedMatch = Validations.ReadIntInput();
-            return maestryGainedMatch;
+            Console.WriteLine("Informe quantidade de Maestria: ");
+            int masteryMatch = Validations.ReadIntInput();
+            return masteryMatch;
         }
 
-        public static string GetLanePlayed(List<string> LanesOptions)
+        public static string GetLane(List<string> LanesOptions)
         {
             while (true)
             {
-                Console.WriteLine("Informe a Lane Jogada (Toplane, Midlane, Jungle, Atirador, Suporte): ");
-                string? lanePlayedMatch = Console.ReadLine();
-                if(!string.IsNullOrWhiteSpace(lanePlayedMatch) && Validations.LaneNameChecker(LanesOptions, lanePlayedMatch))
+                Console.WriteLine("Informe a Lane (Toplane, Midlane, Jungle, Atirador, Suporte): ");
+                string? lanePlayed = Console.ReadLine();
+                if(!string.IsNullOrWhiteSpace(lanePlayed) && Validations.LaneNameChecker(LanesOptions, lanePlayed))
                 {
-                    return lanePlayedMatch;
+                    return lanePlayed;
                 }
                 Console.WriteLine("Dados inválidos, tente novamente");
             }
         }
 
-        public static string GetChampionPlayed()
+        public static string GetChampion()
         {
             while(true)
             {
-                Console.WriteLine("Informe Nome do Campeão utilizado: ");
-                string? championPlayedMatch = Console.ReadLine();
-                if (!string.IsNullOrWhiteSpace(championPlayedMatch) && Validations.ChampionNameChecker(championPlayedMatch))
+                Console.WriteLine("Informe Nome do Campeão: ");
+                string? champion = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(champion) && Validations.ChampionNameChecker(champion))
                 {
-                    return championPlayedMatch;
+                    return champion;
                 }
                 Console.WriteLine("Dados inválidos, tente novamente");
             }

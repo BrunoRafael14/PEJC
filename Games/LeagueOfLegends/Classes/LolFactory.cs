@@ -11,17 +11,11 @@ namespace PEJC.Games.LeagueOfLegends.Classes
     {
         private static readonly List<string> LanesOptions = new List<string>
         {"Toplane", "Midlane", "Jungle", "Atirador", "Suporte"};
-        public static Champion CreateChampion()
+        public static Champion DefineInitialMastery()
         {
-            Console.WriteLine("Digite o nome do Campeão: ");
-            string? championName= Console.ReadLine();
-            Console.WriteLine("Digite a quantidade Total de Maestria com o Campeão: ");
-            double championMaestry = Convert.ToDouble(Console.ReadLine());
-
             Champion champion = new Champion();
-            champion.Name = championName;
-            champion.Maestry = championMaestry;
-
+            champion.Name = LolMatchsInputs.GetChampion();
+            champion.Mastery = LolMatchsInputs.GetMastery();
 
             return champion;
         }
@@ -29,13 +23,13 @@ namespace PEJC.Games.LeagueOfLegends.Classes
         public static Match CreateMatch()
         {
             Match match = new Match();
-            match.Kills = ILolCreateMatch.GetKills();
-            match.Deaths = ILolCreateMatch.GetDeaths();
-            match.Assists = ILolCreateMatch.GetAssists();
-            match.PdlGained = ILolCreateMatch.GetPdlGained();
-            match.MaestryGained = ILolCreateMatch.GetMaestryGained();
-            match.LanePlayed = ILolCreateMatch.GetLanePlayed(LanesOptions);
-            match.ChampionPlayed = ILolCreateMatch.GetChampionPlayed();
+            match.Kills = LolMatchsInputs.GetKills();
+            match.Deaths = LolMatchsInputs.GetDeaths();
+            match.Assists = LolMatchsInputs.GetAssists();
+            match.PdlGained = LolMatchsInputs.GetPdl();
+            match.MaestryGained = LolMatchsInputs.GetMastery();
+            match.LanePlayed = LolMatchsInputs.GetLane(LanesOptions);
+            match.ChampionPlayed = LolMatchsInputs.GetChampion();
 
             return match;
         }

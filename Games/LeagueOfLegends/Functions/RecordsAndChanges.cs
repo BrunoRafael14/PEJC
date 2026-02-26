@@ -17,7 +17,8 @@ namespace PEJC.Games.LeagueOfLegends.Functions
 
         public static void MaestryRegistre()
         {
-            throw new NotImplementedException();
+            var championCreated = LolFactory.DefineInitialMastery();
+            JsonService.SaveInitialMasteryData(championCreated);
         }
 
         public static void MaestryChange()

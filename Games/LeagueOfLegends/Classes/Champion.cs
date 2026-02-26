@@ -8,7 +8,7 @@ namespace PEJC.Games.LeagueOfLegends.Classes
     public class Champion
     {
         public string? Name {get;set;}
-        public double Maestry {get;set;}
+        public double Mastery {get;set;}
         
     }
 }
