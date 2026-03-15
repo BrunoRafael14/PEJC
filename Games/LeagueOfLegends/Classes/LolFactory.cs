@@ -11,7 +11,8 @@ namespace PEJC.Games.LeagueOfLegends.Classes
     {
         private static readonly List<string> LanesOptions = new List<string>
         {"Toplane", "Midlane", "Jungle", "Atirador", "Suporte"};
-        public static Champion DefineInitialMastery()
+
+        public static Champion DefineMastery()
         {
             Champion champion = new Champion();
             champion.Name = LolMatchsInputs.GetChampion();

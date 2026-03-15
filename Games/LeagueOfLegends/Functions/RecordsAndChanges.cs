@@ -17,13 +17,14 @@ namespace PEJC.Games.LeagueOfLegends.Functions
 
         public static void MaestryRegistre()
         {
-            var championCreated = LolFactory.DefineInitialMastery();
-            JsonService.SaveInitialMasteryData(championCreated);
+            var championInitialMasteryCreated = LolFactory.DefineMastery();
+            JsonService.SaveInitialMasteryData(championInitialMasteryCreated);
         }
 
         public static void MaestryChange()
         {
-            throw new NotImplementedException();
+            var championMasteryChanged = LolFactory.DefineMastery();
+            JsonService.ChangeInitialMasteryData(championMasteryChanged);
         }
     }
 }

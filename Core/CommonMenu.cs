@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PEJC.Core
 {
-    public class IMenu
+    public class CommonMenu
     {
         public static void StartMenu(Dictionary<string, Action> Options)
         {

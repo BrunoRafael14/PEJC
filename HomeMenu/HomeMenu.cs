@@ -16,7 +16,7 @@ namespace PEJC.HomeMenu
 
         public static void StartHomeMenu()
         {
-            IMenu.StartMenu(GameOptions);
+            CommonMenu.StartMenu(GameOptions);
         }
     }
 }

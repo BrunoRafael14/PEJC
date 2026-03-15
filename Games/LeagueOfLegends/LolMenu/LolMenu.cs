@@ -18,7 +18,7 @@ namespace PEJC.Games.LeagueOfLegends.LolMenu
 
         public static void StartLolMenu()
         {
-            IMenu.StartMenu(Options);
+            CommonMenu.StartMenu(Options);
         }
     }
 }
