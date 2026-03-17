@@ -12,11 +12,12 @@ namespace PEJC.Games.LeagueOfLegends.Data
     {
 
         // Métodos de Funcinomento
-        public static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Games\LeagueOfLegends\Data\champions.json");
+        private static readonly string championsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Games\LeagueOfLegends\Data\champions.json");
+        private static readonly string matchHistoryFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Games\LeagueOfLegends\Data\match-history.json");
 
         public static Dictionary<string, double?> ChampionFileReading()
         {
-            string jsonContent = File.ReadAllText(filePath);
+            string jsonContent = File.ReadAllText(championsFilePath);
             Dictionary<string, double?> champions = JsonSerializer.Deserialize<Dictionary<string, double?>>(jsonContent) ?? throw new Exception("Falha ao deserializar o JSON.");
 
             return champions;
@@ -25,7 +26,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
         public static void SerializeFile(Dictionary<string,double?> champions)
         {
             string json = JsonSerializer.Serialize(champions, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            File.WriteAllText(championsFilePath, json);
         }
 
         public static void UpdateData(Champion champion)
@@ -39,13 +40,11 @@ namespace PEJC.Games.LeagueOfLegends.Data
         // Métodos de Save
         public static void SaveMatchData(Match matchCreated)
         {
-            
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\Games\LeagueOfLegends\Data\match-history.json");
             List<Match> matches = new List<Match>();
 
-            if (File.Exists(filePath))
+            if (File.Exists(matchHistoryFilePath))
             {
-                string existingJson = File.ReadAllText(filePath);
+                string existingJson = File.ReadAllText(matchHistoryFilePath);
                 if (!string.IsNullOrWhiteSpace(existingJson))
                 {
                     matches = JsonSerializer.Deserialize<List<Match>>(existingJson) ?? new List<Match>();
@@ -55,7 +54,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
             matches.Add(matchCreated);
 
             string json = JsonSerializer.Serialize(matches, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            File.WriteAllText(matchHistoryFilePath, json);
         }
 
         public static void SaveInitialMasteryData(Champion champion)
@@ -80,7 +79,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
             }
 
             UpdateData(champion);
-            Console.WriteLine($"Maestria de {champion.Name} Cadastrada com Sucesso");
+            Console.WriteLine($"Maestria de {champion.Name} alterada com Sucesso");
         }
     }
 }

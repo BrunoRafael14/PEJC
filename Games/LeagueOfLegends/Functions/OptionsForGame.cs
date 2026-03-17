@@ -7,7 +7,7 @@ using PEJC.Games.LeagueOfLegends.Classes;
 
 namespace PEJC.Games.LeagueOfLegends.Functions
 {
-    public class RecordsAndChanges
+    public class OptionsForGame
     {
         public static void MatchRegistre()
         {
@@ -15,13 +15,13 @@ namespace PEJC.Games.LeagueOfLegends.Functions
             JsonService.SaveMatchData(matchCreated);
         }
 
-        public static void MaestryRegistre()
+        public static void MasteryRegistre()
         {
             var championInitialMasteryCreated = LolFactory.DefineMastery();
             JsonService.SaveInitialMasteryData(championInitialMasteryCreated);
         }
 
-        public static void MaestryChange()
+        public static void MasteryChange()
         {
             var championMasteryChanged = LolFactory.DefineMastery();
             JsonService.ChangeInitialMasteryData(championMasteryChanged);

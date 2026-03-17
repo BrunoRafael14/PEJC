@@ -15,8 +15,8 @@ namespace PEJC.Games.LeagueOfLegends.Classes
         public static Champion DefineMastery()
         {
             Champion champion = new Champion();
-            champion.Name = LolMatchsInputs.GetChampion();
-            champion.Mastery = LolMatchsInputs.GetMastery();
+            champion.Name = LolInputs.GetChampion();
+            champion.Mastery = LolInputs.GetMastery();
 
             return champion;
         }
@@ -24,13 +24,13 @@ namespace PEJC.Games.LeagueOfLegends.Classes
         public static Match CreateMatch()
         {
             Match match = new Match();
-            match.Kills = LolMatchsInputs.GetKills();
-            match.Deaths = LolMatchsInputs.GetDeaths();
-            match.Assists = LolMatchsInputs.GetAssists();
-            match.PdlGained = LolMatchsInputs.GetPdl();
-            match.MaestryGained = LolMatchsInputs.GetMastery();
-            match.LanePlayed = LolMatchsInputs.GetLane(LanesOptions);
-            match.ChampionPlayed = LolMatchsInputs.GetChampion();
+            match.Kills = LolInputs.GetKills();
+            match.Deaths = LolInputs.GetDeaths();
+            match.Assists = LolInputs.GetAssists();
+            match.PdlGained = LolInputs.GetPdl();
+            match.MaestryGained = LolInputs.GetMastery();
+            match.LanePlayed = LolInputs.GetLane(LanesOptions);
+            match.ChampionPlayed = LolInputs.GetChampion();
 
             return match;
         }

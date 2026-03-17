@@ -6,7 +6,7 @@ using PEJC.Core;
 
 namespace PEJC.Games.LeagueOfLegends.Functions
 {
-    public class LolMatchsInputs
+    public class LolInputs
     {
 
         public static int GetKills()

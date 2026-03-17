@@ -11,9 +11,9 @@ namespace PEJC.Games.LeagueOfLegends.LolMenu
     {
         private static readonly Dictionary<string, Action> Options = new Dictionary<string, Action>
         {
-            {"Registrar Partida", RecordsAndChanges.MatchRegistre},
-            {"Registrar Maestria de Campeão", RecordsAndChanges.MaestryRegistre},
-            {"Alterar Maestria de Campeão", RecordsAndChanges.MaestryChange}
+            {"Registrar Partida", OptionsForGame.MatchRegistre},
+            {"Registrar Maestria de Campeão", OptionsForGame.MasteryRegistre},
+            {"Alterar Maestria de Campeão", OptionsForGame.MasteryChange}
         };
 
         public static void StartLolMenu()
