@@ -43,5 +43,14 @@
     "MaestryGained": 322,
     "LanePlayed": "Midlane",
     "ChampionPlayed": "Anivia"
+  },
+  {
+    "Kills": 1,
+    "Deaths": 0,
+    "Assists": 1,
+    "PdlGained": 2,
+    "MaestryGained": 201,
+    "LanePlayed": "Jungle",
+    "ChampionPlayed": "Anivia"
   }
 ]

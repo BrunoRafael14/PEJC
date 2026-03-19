@@ -23,10 +23,10 @@ namespace PEJC.Games.LeagueOfLegends.Data
             return champions;
         }
 
-        public static void SerializeFile(Dictionary<string,double?> champions)
+        public static void SerializeFile(object colection, string file)
         {
-            string json = JsonSerializer.Serialize(champions, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(championsFilePath, json);
+            string json = JsonSerializer.Serialize(colection, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(file, json);
         }
 
         public static void UpdateData(Champion champion)
@@ -34,7 +34,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
             var champions = ChampionFileReading();
             champions[champion.Name!] = champion.Mastery;
 
-            SerializeFile(champions);
+            SerializeFile(champions, championsFilePath);
         }
 
         // Métodos de Save
@@ -52,9 +52,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
             }
 
             matches.Add(matchCreated);
-
-            string json = JsonSerializer.Serialize(matches, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(matchHistoryFilePath, json);
+            SerializeFile(matches, matchHistoryFilePath);
         }
 
         public static void SaveInitialMasteryData(Champion champion)
