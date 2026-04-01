@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using PEJC.Games.LeagueOfLegends.Data;
 using PEJC.Games.LeagueOfLegends.Classes;
 
-namespace PEJC.Games.LeagueOfLegends.Functions
+namespace PEJC.Games.LeagueOfLegends.Functions.game_statistics
 {
-    public class OptionsForGame
+    public class LolGameOperations
     {
         public static void MatchRegistre()
         {

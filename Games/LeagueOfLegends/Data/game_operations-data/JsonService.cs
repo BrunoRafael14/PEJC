@@ -13,7 +13,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
     {
 
         // Métodos de Funcinomento
-        public static void UpdateData(Champion champion)
+        public static void UpdateChampionData(Champion champion)
         {
             var champions = FilesReading.ChampionFileReading();
             champions[champion.Name!] = champion.Mastery;
@@ -21,10 +21,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
             FilesReading.SerializeFile(champions, FilesReading.ShowFilePath("championsFilePath"));
         }
 
-
-
-        // Métodos de Save
-        public static void SaveMatchData(Match matchCreated)
+        public static List<Match> PullMatchData()
         {
             List<Match> matches = new List<Match>();
 
@@ -35,7 +32,18 @@ namespace PEJC.Games.LeagueOfLegends.Data
                 {
                     matches = JsonSerializer.Deserialize<List<Match>>(existingJson) ?? new List<Match>();
                 }
+                
             }
+
+            return matches;
+        }
+
+
+
+        // Métodos de Save
+        public static void SaveMatchData(Match matchCreated)
+        {
+            List<Match> matches = PullMatchData();
 
             matches.Add(matchCreated);
             FilesReading.SerializeFile(matches, FilesReading.ShowFilePath("matchHistoryFilePath"));
@@ -50,7 +58,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
                 return;
             }
 
-            UpdateData(champion);
+            UpdateChampionData(champion);
             Console.WriteLine($"Maestria de {champion.Name} Cadastrada com Sucesso");
         }
 
@@ -62,7 +70,7 @@ namespace PEJC.Games.LeagueOfLegends.Data
                 return;
             }
 
-            UpdateData(champion);
+            UpdateChampionData(champion);
             Console.WriteLine($"Maestria de {champion.Name} alterada com Sucesso");
         }
     }

@@ -40,6 +40,5 @@ namespace PEJC.Core
             string json = JsonSerializer.Serialize(colection, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(file, json);
         }
-
     }
 }

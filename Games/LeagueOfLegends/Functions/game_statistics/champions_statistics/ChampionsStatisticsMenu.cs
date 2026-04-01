@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PEJC.Games.LeagueOfLegends.Functions.game_statistics
+namespace PEJC.Games.LeagueOfLegends.Functions.game_statistics.champions_statistics
 {
-    public class TotalMatches
+    public class ChampionsStatisticsMenu
     {
         
     }

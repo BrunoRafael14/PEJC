@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PEJC.Games.LeagueOfLegends.LolMenu;
+using PEJC.Games.LeagueOfLegends.LolMenus;
 using PEJC.Core;
 
 namespace PEJC.HomeMenu
